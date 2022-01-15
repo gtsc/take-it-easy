@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+# Directories
+build/
+
+# Dev Environment
+.vscode/

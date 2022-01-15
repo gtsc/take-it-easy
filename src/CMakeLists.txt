@@ -1,0 +1,1 @@
+add_executable(TakeItEasy take-it-easy.cpp)
