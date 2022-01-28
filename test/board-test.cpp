@@ -2,4 +2,4 @@
 
 #include "gtest/gtest.h"
 
-TEST(SampleTestCategory, SampleTestOne) { EXPECT_DOUBLE_EQ(tie::Func(2., 5.), 9.); }
+TEST(SampleTestCategory, SampleTestOne) { EXPECT_DOUBLE_EQ(tie::Func(2., 5.), 12.); }
