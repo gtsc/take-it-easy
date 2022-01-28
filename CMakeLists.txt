@@ -16,6 +16,9 @@ add_compile_options(-Wall -Wextra -pedantic -Werror)
 # set C++20
 add_compile_options(-std=c++20)
 
+# enables testing via ctest
+enable_testing()
+
 # add all subdirectories
 add_subdirectory(src)
 add_subdirectory(test)
