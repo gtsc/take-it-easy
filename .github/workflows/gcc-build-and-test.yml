@@ -1,4 +1,4 @@
-name: GCC Build
+name: GCC Build & Unit Tests
 
 on:
   push:
