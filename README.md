@@ -1,5 +1,7 @@
 # Mastering Take It Easy
 
+![GCC compilation & unit tests](https://github.com/gtsc/take-it-easy/actions/workflows/gcc-build-and-test.yml/badge.svg)
+
 ### On the Game of Take It Easy
 This repository aims to determine the ideal strategy for the game "Take It Easy".
 Take It Easy is a classic for board games 🎲. Maybe you have played it already.
@@ -24,7 +26,7 @@ The game developer states that the maximum number of points to reach is 307. New
 Besides figuring out an ideal strategy for Take It Easy the aim of this project is to play around with some tools for software development, build up an understanding for DevOps processes using GitHub and employing test-driven development. Hence, progress on the actual goal might be slower from times.
 
 - [x] setting up repository 🎉
-- [ ] configure build system, unit test suite, pipelines, etc.
+- [x] configure build system, unit test suite, pipelines, etc.
 - [ ] implementation of basic game engine
 - [ ] computer is able to play game at random
 - [ ] research & development of self-learning algorithms for optimizing self-play
