@@ -1,6 +1,11 @@
 cmake_minimum_required(VERSION 3.16)
 project(TakeItEasyProject CXX)
 
+set(CMAKE_CXX_OUTPUT_EXTENSION_REPLACE ON)
+
+# add definitions
+add_definitions(-fprofile-arcs -ftest-coverage)
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
@@ -13,6 +18,10 @@ include_directories(${PROJECT_SOURCE_DIR}/src)
 
 # be very expressive in terms of warnings, compilations fails on warning
 add_compile_options(-Wall -Wextra -pedantic -Werror)
+add_compile_options(-O0 -Wall -fprofile-arcs -ftest-coverage) # necessary for test coverage
+
+set(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} -fprofile-arcs -ftest-coverage")
+
 # set C++20
 add_compile_options(-std=c++20)
 
@@ -30,8 +39,9 @@ add_custom_target(gcov
     )
 add_custom_command(TARGET gcov
     COMMAND echo "=================== GCOV ===================="
-    COMMAND gcov -b ${CMAKE_SOURCE_DIR}/test/unit-test/*.cpp -o ${OBJECT_DIR} -o ${OBJECT_DIR}
-    COMMAND echo "-- Source directory: ${CMAKE_SOURCE_DIR}/test/unit-test/"
+    COMMAND gcov -b ${CMAKE_SOURCE_DIR}/test/*.cpp -o ${OBJECT_DIR}
+    COMMAND echo "gcov -b ${CMAKE_SOURCE_DIR}/test/*.cpp -o ${OBJECT_DIR}"
+    COMMAND echo "-- Source directory: ${CMAKE_SOURCE_DIR}/test/"
     COMMAND echo "-- Coverage files have been output to ${CMAKE_BINARY_DIR}/gcoverage"
     WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/gcoverage
     )
